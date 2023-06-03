@@ -1,0 +1,17 @@
+{
+  "[javascript][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+    "files.associations": {
+      "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "tailwindCSS.experimental.classRegex": [
+      // Enable IntelliSense on Stype function calls outside "className" attribute
+      ["\\.(?:parse|from|add|remove)\\s*\\(\\s*([\\s\\S]*?)\\s*\\)\\s*", "[\"'`]([^\"'`]*)[\"'`]"]
+    ],
+  }
+  
