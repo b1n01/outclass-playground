@@ -2,37 +2,36 @@
 import { useState } from "react";
 import { s } from "stype";
 
+// This is the Stype demo, read more https://github.com/b1n01/stype.
+// This demo is a Next.js app with TypeScript and TailwindCSS, edit "buttonStyle"
+// to update the applied classes.
+
 export default function Playground() {
   const [state, setState] = useState(false);
 
   const buttonStyle = s.from({
-    base: "rounded round-4",
-    colors: "bg-neutral-300 text-neutral-900",
-    spacing: "p-2 mt-2",
+    default: "rounded",
+    colors: "bg-neutral-200 text-neutral-900",
+    spacing: "p-2 px-4 mb-8",
   });
 
   if (state) {
     buttonStyle
-      .remove("bg-neutral-300 text-neutral-900")
-      .add("bg-violet-800 text-white");
+      .remove("bg-neutral-200 text-neutral-900")
+      .add("bg-violet-600 text-neutral-200");
   }
 
-  const code = (
-    <code className={s.parse("bg-neutral-300 p-2 text-neutral-900")}>
-      class
-    </code>
-  );
+  const classes = buttonStyle.parse();
 
   return (
-    <main className="p-8 bg-neutral-900 h-full text-white">
-      <h1 className={s.parse("text-2xl")}>Stype playground</h1>
-      <div className={s.parse("mt-2")}>
-        Open your browser's dev tool and inspect the {code} atttribute of these
-        elements.
-      </div>
-      <button onClick={() => setState(!state)} className={buttonStyle.parse()}>
+    <main>
+      <button onClick={() => setState(!state)} className={classes}>
         Toggle state
       </button>
+      <div>
+        <p>Applied classes:</p>
+        <code>{classes}</code>
+      </div>
     </main>
   );
 }
