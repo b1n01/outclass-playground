@@ -9,10 +9,10 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className="h-full p-8 bg-neutral-900 text-white">
         <div className="mb-8 space-y-2 text-neutral-400 italic">
-          <h1 className="text-3xl">Stype demo</h1>
+          <h1 className="text-3xl">Outclass playground</h1>
           <p>
-            Stype is a tool for the dynamic creation of CSS classes,{" "}
-            <a href="https://github.com/b1n01/stype" className="underline">
+            Outclass is a class string manipulation tool,{" "}
+            <a href="https://github.com/b1n01/outclass" className="underline">
               read more.
             </a>
           </p>

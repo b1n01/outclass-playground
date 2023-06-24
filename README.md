@@ -1,5 +1,5 @@
-# Stype demo
+# Outclass playground
 
-Stype is a tool for the dynamic creation of CSS classes, [read more](https://github.com/b1n01/stype).
+A class string manipulation tool, [read more here](https://github.com/b1n01/outclass).
 
-Try this demo app on [CodeSandbox](https://codesandbox.io/p/sandbox/github/b1n01/stype-demo?file=app%2Fpage.tsx).
+Try the playground live on [CodeSandbox](https://codesandbox.io/p/sandbox/github/b1n01/outclass/playground?file=app%2Fpage.tsx).

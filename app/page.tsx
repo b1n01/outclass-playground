@@ -1,22 +1,18 @@
 "use client";
 import { useState } from "react";
-import { s } from "stype";
+import { out } from "outclass";
 
-// This is the Stype demo, read more https://github.com/b1n01/stype.
+// This is the Outclass playground, read more https://github.com/b1n01/outclass.
 // This demo is a Next.js app with TypeScript and TailwindCSS, edit "buttonStyle"
 // to update the applied classes.
 
 export default function Playground() {
   const [state, setState] = useState(false);
 
-  const buttonStyle = s.from({
-    default: "rounded",
-    colors: "bg-neutral-200 text-neutral-900",
-    spacing: "p-2 px-4 mb-8",
-  });
+  let buttonStyle = out.add("rounded bg-neutral-200 text-neutral-900 p-2 px-4 mb-8");
 
   if (state) {
-    buttonStyle
+    buttonStyle = buttonStyle
       .remove("bg-neutral-200 text-neutral-900")
       .add("bg-violet-600 text-neutral-200");
   }
