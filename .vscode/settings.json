@@ -11,7 +11,7 @@
     },
     "tailwindCSS.experimental.classRegex": [
       // Enable IntelliSense on Stype function calls outside "className" attribute
-      ["\\.(?:parse|from|add|remove)\\s*\\(\\s*([\\s\\S]*?)\\s*\\)\\s*", "[\"'`]([^\"'`]*)[\"'`]"]
+      ["\\.(?:parse|set|add|remove|with)\\s*\\(\\s*([\\s\\S]*?)\\s*\\)\\s*", "[\"'`]([^\"'`]*)[\"'`]"]
     ],
   }
   
