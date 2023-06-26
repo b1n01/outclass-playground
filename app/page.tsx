@@ -9,7 +9,7 @@ import out, { type Outclass } from "outclass";
 export default function Playground() {
   const [state, setState] = useState(false);
 
-  // Define a "patch" to update the button style. Note that TailwindCSS
+  // Define a "patch" to update the button style
   const patch = out.with({
     add: state && "bg-violet-600 text-neutral-200",
     remove: state && "bg-neutral-200 text-neutral-900",
