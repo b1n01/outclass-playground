@@ -1,33 +1,51 @@
 "use client";
-import { useState } from "react";
-import { out } from "outclass";
+import { useState, type ReactNode } from "react";
+import out from "outclass";
 
 // This is the Outclass playground, read more https://github.com/b1n01/outclass.
-// This demo is a Next.js app with TypeScript and TailwindCSS, edit "buttonStyle"
-// to update the applied classes.
+// This demo is a Next.js app with TypeScript and TailwindCSS.
+// Feel free to try out Outclass API
 
 export default function Playground() {
   const [state, setState] = useState(false);
 
-  let buttonStyle = out.add("rounded bg-neutral-200 text-neutral-900 p-2 px-4 mb-8");
-
-  if (state) {
-    buttonStyle = buttonStyle
-      .remove("bg-neutral-200 text-neutral-900")
-      .add("bg-violet-600 text-neutral-200");
-  }
-
-  const classes = buttonStyle.parse();
+  // Define a "patch" to update the button style. Note that TailwindCSS
+  // intellisense for VSCODE works on `out.*` calls.
+  const patch = out.with({
+    add: state && "bg-violet-600 text-neutral-200",
+    remove: state && "bg-neutral-200 text-neutral-900",
+  });
 
   return (
-    <main>
-      <button onClick={() => setState(!state)} className={classes}>
-        Toggle state
+    // Pass the "patch" prop to the Button component
+    <Button onClick={() => setState(!state)} style={patch}>
+      Toggle state
+    </Button>
+  );
+}
+
+function Button({
+  style,
+  onClick,
+  children,
+}: {
+  style?: any;
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  // Define the button style and apply the given patch
+  const classes = out.parse({
+    set: "rounded bg-neutral-200 text-neutral-900 p-2 px-4 mb-8",
+    apply: style,
+  });
+
+  return (
+    <>
+      <button onClick={onClick} className={classes}>
+        {children}
       </button>
-      <div>
-        <p>Applied classes:</p>
-        <code>{classes}</code>
-      </div>
-    </main>
+      <p>Applied classes:</p>
+      <code>{classes}</code>
+    </>
   );
 }
