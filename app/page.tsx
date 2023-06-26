@@ -1,16 +1,15 @@
 "use client";
 import { useState, type ReactNode } from "react";
-import out from "outclass";
+import out, { type Outclass } from "outclass";
 
 // This is the Outclass playground, read more https://github.com/b1n01/outclass.
 // This demo is a Next.js app with TypeScript and TailwindCSS.
-// Feel free to try out Outclass API
+// Feel free to play around with thw `out` object.
 
 export default function Playground() {
   const [state, setState] = useState(false);
 
   // Define a "patch" to update the button style. Note that TailwindCSS
-  // intellisense for VSCODE works on `out.*` calls.
   const patch = out.with({
     add: state && "bg-violet-600 text-neutral-200",
     remove: state && "bg-neutral-200 text-neutral-900",
@@ -29,7 +28,7 @@ function Button({
   onClick,
   children,
 }: {
-  style?: any;
+  style?: Outclass;
   onClick: () => void;
   children: ReactNode;
 }) {
