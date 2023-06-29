@@ -1,6 +1,6 @@
 "use client";
 import { useState, type ReactNode } from "react";
-import out, { type Outclass } from "outclass";
+import { out, type Outclass } from "outclass";
 
 // This is the Outclass playground, read more https://github.com/b1n01/outclass.
 // This demo is a Next.js app with TypeScript and TailwindCSS.
